@@ -13,4 +13,5 @@ npm install @babel/register
 npm install ejs  
 
 # 실행 명령어
+(처음 실행시) npm install  
 npm start
