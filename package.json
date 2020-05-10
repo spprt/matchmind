@@ -4,15 +4,15 @@
   "description": "웹 캐치마인드",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec babel-node src/server.js --ignore assets/ --ignore src/static"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/spprt/matchmind.git"
   },
   "keywords": [
-    "Catch",
-    "Mind"
+    "CatchMind"
   ],
   "author": "",
   "license": "ISC",
@@ -21,7 +21,13 @@
   },
   "homepage": "https://github.com/spprt/matchmind#readme",
   "dependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/register": "^7.9.0",
+    "ejs": "^3.1.2",
     "express": "^4.17.1",
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.3",
     "socket.io": "^2.3.0"
   }
