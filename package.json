@@ -1,0 +1,28 @@
+{
+  "name": "matchmind",
+  "version": "0.0.1",
+  "description": "웹 캐치마인드",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spprt/matchmind.git"
+  },
+  "keywords": [
+    "Catch",
+    "Mind"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/spprt/matchmind/issues"
+  },
+  "homepage": "https://github.com/spprt/matchmind#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.3",
+    "socket.io": "^2.3.0"
+  }
+}
