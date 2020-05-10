@@ -1,69 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="/styles/styles.css"/>
-    <title>CatchMind</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <title>MATCH MIND</title>
+  </head>
+  <body>
+    <div style="display:none;">HELLO! MATCH MIND</div>
     <div class="loginBox">
-        <form id="jsLogin">
-            <input placeholder="닉네임을 적고 입장해주세요⚡" type="text"/>
-        </form>
+      <form id="jsLogin">
+        <input placeholder="닉네임을 적고 입장해주세요⚡" type="text" />
+      </form>
     </div>
     <div class="gameContainer" id="jsGame">
-        <div class="main">
-            <h1 id="Title">DK's Realtime Drawing Game</h1>
-            <div id="jsNotifs"></div>
-            <canvas class="canvas" id="jsCanvas">
-            </canvas>
-            <div class="controls" id="jsControls">
-                <button id="jsMode">Fill</button>
-                <div class="colors">
-                    <div class="color jsColor" style="background-color:rgb(0, 0, 0)"></div>
-                    <div class="color jsColor" style="background-color:rgb(255,255,255)"></div>
-                    <div class="color jsColor" style="background-color:rgb(255,59,48)"></div>
-                    <div class="color jsColor" style="background-color:rgb(255,149,0)"></div>
-                    <div class="color jsColor" style="background-color:rgb(255,204,0)"></div>
-                    <div class="color jsColor" style="background-color:rgb(76,217,100)"></div>
-                    <div class="color jsColor" style="background-color:rgb(90,200,250)"></div>
-                    <div class="color jsColor" style="background-color:rgb(0,122,255)"></div>
-                    <div class="color jsColor" style="background-color:rgb(88,86,214)"></div>
-                </div>
-            </div>
+      <div class="main">
+        <h1 id="Title">Match Mind</h1>
+        <div id="jsNotifs"></div>
+        <div id="timeText"></div>
+        <canvas class="canvas" id="jsCanvas"></canvas>
+        <div class="controls" id="jsControls">
+          <button id="jsMode">Fill</button>
+          <div class="colors">
+            <div
+              class="color jsColor"
+              style="background-color:rgb(0, 0, 0)"
+            ></div>
+            <div
+              class="color jsColor"
+              style="background-color:rgb(255,255,255)"
+            ></div>
+            <div
+              class="color jsColor"
+              style="background-color:rgb(255,59,48)"
+            ></div>
+            <div
+              class="color jsColor"
+              style="background-color:rgb(255,149,0)"
+            ></div>
+            <div
+              class="color jsColor"
+              style="background-color:rgb(255,204,0)"
+            ></div>
+            <div
+              class="color jsColor"
+              style="background-color:rgb(76,217,100)"
+            ></div>
+            <div
+              class="color jsColor"
+              style="background-color:rgb(90,200,250)"
+            ></div>
+            <div
+              class="color jsColor"
+              style="background-color:rgb(0,122,255)"
+            ></div>
+            <div
+              class="color jsColor"
+              style="background-color:rgb(88,86,214)"
+            ></div>
+          </div>
         </div>
-        <div class="chat">
-            <div class="player__board" id="jsPBoard"></div>
-            <ul class="chat__messages" id="jsMessages"></ul>
-            <form class="chat__form" id="jsSendMsg">
-                <input placeholder="메세지를 입력하세요" type="text"/>
-            </form>
-        </div>
+      </div>
+      <div class="chat">
+        <div class="player__board" id="jsPBoard"></div>
+        <ul class="chat__messages" id="jsMessages"></ul>
+        <form class="chat__form" id="jsSendMsg">
+          <input placeholder="메세지를 입력하세요" type="text" />
+        </form>
+      </div>
     </div>
     <script>
-    window.events = {
-        "setNickname": "setNickname",
-        "newUser": "newUser",
-        "disconnect": "disconnect",
-        "disconnected": "disconnected",
-        "sendMsg": "sendMsg",
-        "newMsg": "newMsg",
-        "beginPath": "beginPath",
-        "strokePath": "strokePath",
-        "beganPath": "beganPath",
-        "strokedPath": "strokedPath",
-        "fill": "fill",
-        "filled": "filled",
-        "playerUpdate": "playerUpdate",
-        "gameStarted": "gameStarted",
-        "leaderNotif": "leaderNotif",
-        "gameEnded": "gameEnded",
-        "gameStarting": "gameStarting"
-    }
+      window.events = {
+        setNickname: "setNickname",
+        newUser: "newUser",
+        disconnect: "disconnect",
+        disconnected: "disconnected",
+        sendMsg: "sendMsg",
+        newMsg: "newMsg",
+        beginPath: "beginPath",
+        strokePath: "strokePath",
+        beganPath: "beganPath",
+        strokedPath: "strokedPath",
+        fill: "fill",
+        filled: "filled",
+        playerUpdate: "playerUpdate",
+        gameStarted: "gameStarted",
+        leaderNotif: "leaderNotif",
+        gameEnded: "gameEnded",
+        gameStarting: "gameStarting",
+      };
     </script>
     <script src="/socket.io/socket.io.js"></script>
-    <script src="/js/main.js">
-    </script>
-</body>
+    <script src="/js/main.js"></script>
+  </body>
 </html>

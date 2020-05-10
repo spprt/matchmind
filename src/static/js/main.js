@@ -338,6 +338,7 @@ var _chat = require("./chat");
 
 var board = document.getElementById("jsPBoard");
 var notifs = document.getElementById("jsNotifs");
+var timeText = document.getElementById("timeText");
 
 var addPlayers = function addPlayers(players) {
   board.innerHTML = "";
@@ -353,6 +354,11 @@ var setNotifs = function setNotifs(text) {
   notifs.innerText = text;
 };
 
+var setTimeText = function setTimeText(text) {
+  timeText.innerText = "";
+  timeText.innerText = text;
+}
+
 var handlePlayerUpdate = function handlePlayerUpdate(_ref) {
   var sockets = _ref.sockets;
   return addPlayers(sockets);
@@ -365,7 +371,27 @@ var handleGameStarted = function handleGameStarted() {
   (0, _paint.disableCanvas)();
   (0, _paint.hideControls)();
   (0, _chat.enableChat)();
+  // setTimer();
 };
+
+// 타이머 설정
+function setTimer() {
+  var time = 1 * 60;
+  var min = "";
+  var sec = "";
+  
+  // clearInterval 필요
+  var x = setInterval(function() {
+    min = parseInt(time/60);
+    sec = time%60;
+    setTimeText(min + ':' + sec);
+    time--;
+
+    if (time < 0){
+      //setTimeText('');
+    }
+  }, 1000);
+}
 
 exports.handleGameStarted = handleGameStarted;
 
@@ -374,13 +400,13 @@ var handleLeaderNotif = function handleLeaderNotif(_ref2) {
   (0, _paint.enableCanvas)();
   (0, _paint.showControls)();
   (0, _chat.disableChat)();
-  notifs.innerText = "\uB2F9\uC2E0\uC740 \uBC29\uC7A5\uC785\uB2C8\uB2E4. \uB2E4\uC74C\uACFC \uAC19\uC774 \uBB18\uC0AC\uD574\uC8FC\uC138\uC694! : ".concat(word);
+  notifs.innerText = "당신은 출제자입니다. 다음과 같이 묘사해주세요! : ".concat(word);
 };
 
 exports.handleLeaderNotif = handleLeaderNotif;
 
 var handleGameEnded = function handleGameEnded() {
-  setNotifs("게임이 끝났습니다.⏰");
+  setNotifs("게임이 끝났습니다.");
   (0, _paint.disableCanvas)();
   (0, _paint.hideControls)();
   (0, _paint.resetCanvas)();
@@ -389,7 +415,7 @@ var handleGameEnded = function handleGameEnded() {
 exports.handleGameEnded = handleGameEnded;
 
 var handleGameStarting = function handleGameStarting() {
-  return setNotifs("게임이 곧 시작됩니다. 기다려주세요⌛");
+  return setNotifs("게임이 곧 시작됩니다. 기다려주세요");
 };
 
 exports.handleGameStarting = handleGameStarting;
