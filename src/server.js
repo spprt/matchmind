@@ -5,7 +5,7 @@ import logger from "morgan";
 import socketController from "./socketController";
 import events from "./events";
 
-const PORT = 4000;
+const PORT = 5000;
 const app = express();
 
 app.engine('html', require('ejs').renderFile);
